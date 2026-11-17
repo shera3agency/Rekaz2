@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دراسة تحليل المنافسين في السوق السعودي - شركة ركاز</title>
+    <!-- استدعاء مكتبة Tailwind CSS للتصميم المتجاوب والعصري -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- استدعاء خط Cairo من Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: radial-gradient(circle at top right, #064e3b, #042f2e 45%, #022c22 100%);
+            color: #f0fdfa;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        /* تأثيرات البطاقات الزجاجية */
+        .glass-card {
+            background: rgba(19, 78, 74, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(45, 212, 191, 0.25);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.4);
+        }
+        .glass-card-dark {
+            background: rgba(4, 47, 46, 0.65);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+        /* خطوط الربط في المخطط الهيكلي */
+        .tree-connector-v {
+            width: 3px;
+            background: linear-gradient(to bottom, #2dd4bf, #0d9488);
+            margin: 0 auto;
+        }
+        .tree-connector-h {
+            height: 3px;
+            background: linear-gradient(to right, #0d9488, #2dd4bf, #0d9488);
+        }
+        /* حركة الطفو للشعار والأيقونات */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+        .animate-float {
+            animation: floatSlow 3.5s ease-in-out infinite;
+        }
+        /* حركة الطفو والتوهج المستمر للوجو العائم */
+        @keyframes floatAndGlow {
+            0%, 100% {
+                transform: translateY(0px) scale(1);
+                box-shadow: 0 0 18px rgba(45, 212, 191, 0.45), 0 0 32px rgba(20, 184, 166, 0.25);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.04);
+                box-shadow: 0 0 28px rgba(45, 212, 191, 0.85), 0 0 48px rgba(34, 211, 238, 0.55);
+            }
+        }
+        .floating-glow-logo {
+            animation: floatAndGlow 3.2s ease-in-out infinite;
+        }
+        /* تأثيرات الموشن لظهور الأقسام والبطاقات */
+        .motion-reveal {
+            opacity: 0;
+            transform: translateY(30px) scale(0.985);
+            transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .motion-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .motion-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .motion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.55), 0 0 20px rgba(45, 212, 191, 0.15);
+            border-color: rgba(45, 212, 191, 0.55);
+        }
+        /* شريط التمرير المخصص */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #022c22;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="pb-28 relative">
+
+    <!-- خلفية شبكية هندسية خفيفة -->
+    <div class="fixed inset-0 pointer-events-none opacity-15 z-0" 
+         style="background-image: radial-gradient(#2dd4bf 1px, transparent 1px); background-size: 28px 28px;"></div>
+
+    <!-- رأس الصفحة (Header Infographic Banner) -->
+    <header class="relative z-10 pt-10 pb-12 px-4 border-b border-teal-700/40 bg-gradient-to-b from-teal-950/90 to-transparent">
+        <div class="max-w-5xl mx-auto flex flex-col items-center text-center gap-6">
+            <!-- اللوجو الرئيسي في منتصف أعلى العرض -->
+            <div class="w-28 h-28 rounded-2xl p-1.5 bg-gradient-to-tr from-teal-400 to-cyan-300 shadow-2xl animate-float flex-shrink-0">
+                <img src="https://i.ibb.co/3mcGJZDm/f7a2f35c-a1d9-41a9-abab-883812218eaf.jpg" 
+                     alt="شعار الشركة" 
+                     class="w-full h-full object-cover rounded-xl">
+            </div>
+
+            <!-- العنوان الرئيسي والشارة -->
+            <div class="max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 bg-teal-500/20 border border-teal-400/40 text-teal-200 px-3.5 py-1 rounded-full text-xs font-bold mb-3">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    تاريخ الدراسة: نوفمبر 2026
+                </div>
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight">
+                    دراسة تحليل المنافسين في السوق السعودي
+                </h1>
+                <p class="text-teal-200 text-base md:text-lg font-bold mt-2">
+                    شركة ركاز لخدمات الموارد البشرية والمنصات الحكومية
+                </p>
+            </div>
+
+            <!-- بطاقات مؤشرات سريعة (KPI Cards) -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-lg mx-auto pt-1">
+                <div class="glass-card-dark motion-card p-3.5 rounded-2xl text-center">
+                    <span class="block text-xs text-teal-300 mb-1">الشركات المحللة</span>
+                    <span class="text-xl md:text-2xl font-black text-white">19</span>
+                    <span class="block text-[11px] text-teal-200">ضمن 4 فئات</span>
+                </div>
+                <div class="glass-card-dark motion-card p-3.5 rounded-2xl text-center">
+                    <span class="block text-xs text-teal-300 mb-1">مجموعات خدمات ركاز</span>
+                    <span class="text-xl md:text-2xl font-black text-cyan-300">6</span>
+                    <span class="block text-[11px] text-teal-200">مجموعات رئيسية</span>
+                </div>
+                <div class="glass-card-dark motion-card p-3.5 rounded-2xl text-center border-amber-400/40">
+                    <span class="block text-xs text-amber-200 mb-1">التوصيات الاستراتيجية</span>
+                    <span class="text-xl md:text-2xl font-black text-amber-300">6</span>
+                    <span class="block text-[11px] text-amber-200">محاور عمل</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي للمخطط -->
+    <main class="max-w-7xl mx-auto px-4 mt-8 space-y-12 relative z-10">
+
+        <!-- أولاً: نطاق الدراسة وطبيعة نشاط شركة ركاز -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-amber-400">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">الإطار العام والخدمات التشغيلية</span>
+                <h2 class="text-2xl font-black text-white mt-1">أولاً: نطاق الدراسة وطبيعة نشاط شركة ركاز</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 text-teal-100 leading-relaxed text-sm md:text-base mb-8">
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border border-teal-600/30">
+                    <p>تهدف هذه الدراسة إلى تحليل الشركات والمؤسسات الخاصة العاملة في المملكة العربية السعودية، والتي تقدم خدمات مماثلة أو متقاطعة مع الخدمات التي تقدمها شركة ركاز، مع التركيز على الجهات التي تتولى تنفيذ المعاملات الحكومية، وإدارة خدمات المنشآت، وتقديم حلول الموارد البشرية والعلاقات الحكومية والتراخيص التجارية والصناعية.</p>
+                </div>
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border border-cyan-600/30">
+                    <p class="mb-2">تعتمد الدراسة على تحليل الخدمات الفعلية التي تقدمها ركاز، ومقارنتها بخدمات المنافسين من حيث:</p>
+                    <ul class="list-disc list-inside space-y-1 text-xs md:text-sm">
+                        <li>طبيعة الخدمات المقدمة.</li>
+                        <li>نطاق التغطية للمنصات الحكومية.</li>
+                        <li>الأسعار والباقات المعلنة.</li>
+                        <li>آلية تقديم الخدمات.</li>
+                        <li>توفر تطبيقات الهواتف الذكية.</li>
+                        <li>نقاط القوة والفرص التنافسية.</li>
+                    </ul>
+                </div>
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border border-amber-500/30 flex items-center">
+                    <p class="font-semibold text-amber-100">تم استبعاد الجهات الحكومية والمنصات الرسمية من قائمة المنافسين، والتركيز على الشركات الخاصة ومكاتب الخدمات ومزودي خدمات التعقيب والعلاقات الحكومية.</p>
+                </div>
+            </div>
+
+            <!-- 1. الخدمات التي تقدمها شركة ركاز -->
+            <div class="border-t border-teal-700/50 pt-6">
+                <h3 class="text-xl font-black text-white mb-2">1. الخدمات التي تقدمها شركة ركاز</h3>
+                <p class="text-sm text-teal-200 mb-6">وفقاً لملف الخدمات التشغيلي، تنقسم خدمات ركاز إلى المجموعات التالية:</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="rekaz-services-grid"></div>
+            </div>
+        </section>
+
+        <!-- ثانياً: تحليل الشركات المنافسة -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8">
+            <div class="text-center max-w-3xl mx-auto mb-6">
+                <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">التصنيف والمسح التفصيلي للسوق</span>
+                <h2 class="text-2xl md:text-3xl font-black text-white mt-1">ثانياً: تحليل الشركات المنافسة</h2>
+            </div>
+
+            <!-- العقدة المركزية للمخطط -->
+            <div class="flex flex-col items-center mb-8">
+                <div class="bg-gradient-to-r from-teal-600 to-cyan-600 px-8 py-4 rounded-2xl shadow-2xl border-2 border-teal-300/60 text-center motion-card">
+                    <h3 class="text-lg md:text-xl font-black text-white">أقسام الشركات المنافسة (19 شركة ومنصة ومكتب)</h3>
+                </div>
+                <div class="tree-connector-v h-6"></div>
+            </div>
+
+            <!-- حاوية الأقسام الأربعة للمنافسين -->
+            <div class="space-y-10" id="competitors-sections-container"></div>
+        </section>
+
+        <!-- ثالثاً: المقارنة السعرية بين المنافسين -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-cyan-400">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-cyan-300 uppercase tracking-wider">مؤشرات التسعير والباقات</span>
+                <h2 class="text-2xl font-black text-white mt-1">ثالثاً: المقارنة السعرية بين المنافسين</h2>
+                <p class="text-xs md:text-sm text-teal-200 mt-1">توضح المقارنة التالية نماذج التسعير المعلنة في الشركات محل الدراسة:</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl border border-teal-700/60 mb-6">
+                <table class="w-full text-right border-collapse text-xs md:text-sm">
+                    <thead>
+                        <tr class="bg-teal-900/90 text-teal-100 border-b border-teal-700">
+                            <th class="p-3.5 font-black">الشركة</th>
+                            <th class="p-3.5 font-black">السعر المعلن</th>
+                            <th class="p-3.5 font-black">طريقة التسعير</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-teal-800/60 bg-teal-950/50 text-teal-100" id="pricing-table-body"></tbody>
+                </table>
+            </div>
+
+            <div class="bg-amber-950/35 border border-amber-400/40 p-5 rounded-2xl text-xs md:text-sm text-amber-100 leading-relaxed">
+                <strong class="text-amber-300 block mb-2">ملاحظات على المقارنة السعرية:</strong>
+                <ul class="list-disc list-inside space-y-1.5">
+                    <li>الأسعار المذكورة هي الأسعار الواردة في ملف تحليل المنافسين، وليست عروض أسعار تعاقدية مؤكدة.</li>
+                    <li>بعض الأسعار لا تشمل ضريبة القيمة المضافة بنسبة 15%، ويجب التحقق من ذلك قبل المقارنة النهائية.</li>
+                    <li>تختلف الخدمات المشمولة في كل باقة.</li>
+                    <li>يجب التمييز بين سعر الموظف الواحد وسعر المنشأة بالكامل.</li>
+                    <li>يجب توحيد فترة الاشتراك عند إجراء مقارنة دقيقة بين الشركات.</li>
+                    <li>الرسوم الحكومية ورسوم الجهات الخارجية قد تكون منفصلة عن رسوم مقدم الخدمة.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- رابعاً: تحليل المنافسة حسب خدمات ركاز -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">التحليل القطاعي والفرص المتاحة</span>
+                <h2 class="text-2xl font-black text-white mt-1">رابعاً: تحليل المنافسة حسب خدمات ركاز</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="service-competition-grid"></div>
+        </section>
+
+        <!-- خامساً: تحليل نقاط القوة والضعف والفرص التنافسية -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">التقييم التنافسي الشامل</span>
+                <h2 class="text-2xl font-black text-white mt-1">خامساً: تحليل نقاط القوة والضعف والفرص التنافسية</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- 1. نقاط القوة لدى المنافسين -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-cyan-400">
+                    <h3 class="text-lg font-black text-cyan-300 mb-3">1. نقاط القوة لدى المنافسين</h3>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-100 leading-relaxed">
+                        <li>وجود شركات تقدم اشتراكات شهرية وسنوية واضحة.</li>
+                        <li>تنوع قنوات تقديم الخدمة بين المواقع والتطبيقات وواتساب.</li>
+                        <li>وجود شركات لديها تطبيقات مخصصة لتسهيل طلب المعاملات.</li>
+                        <li>تقديم باقات تتناسب مع أحجام المنشآت المختلفة.</li>
+                        <li>وجود منافسين يقدمون ضمانات مالية أو تشغيلية.</li>
+                        <li>تنوع مقدمي الخدمات بين المتخصصين في الموارد البشرية ومكاتب التعقيب ومزودي العلاقات الحكومية.</li>
+                    </ul>
+                </div>
+
+                <!-- 2. نقاط الضعف والقصور في السوق -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-amber-400">
+                    <h3 class="text-lg font-black text-amber-300 mb-3">2. نقاط الضعف والقصور في السوق</h3>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-100 leading-relaxed">
+                        <li>عدم وضوح أسعار عدد كبير من الشركات.</li>
+                        <li>اختلاف آليات التسعير بين المعاملة والموظف والاشتراك الشهري.</li>
+                        <li>اعتماد بعض المنافسين على التواصل المباشر للحصول على عرض سعر.</li>
+                        <li>عدم وجود تطبيقات موبايل لدى أغلب الشركات التي تقدم باقات للمنشآت.</li>
+                        <li>عدم وضوح مدى شمول بعض الباقات للخدمات الصناعية والتجارية.</li>
+                        <li>عدم توحيد نطاق الخدمات داخل الاشتراكات، مما يصعب المقارنة على العميل.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. الفرص المتاحة أمام ركاز -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-emerald-400">
+                    <h3 class="text-lg font-black text-emerald-300 mb-3">3. الفرص المتاحة أمام ركاز</h3>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-100 leading-relaxed">
+                        <li>إنشاء باقات متكاملة تغطي احتياجات المنشآت الحكومية والإدارية والتجارية والصناعية.</li>
+                        <li>استهداف المنشآت الصغيرة والمتوسطة من خلال اشتراكات مرنة.</li>
+                        <li>استهداف المصانع والمستوردين والمصدرين بخدمات متخصصة.</li>
+                        <li>تطوير بوابة إلكترونية لمتابعة المعاملات والطلبات.</li>
+                        <li>توفير تطبيق موبايل موجه للمنشآت B2B.</li>
+                        <li>تقديم تقارير دورية للعميل عن حالة الموظفين والتراخيص والالتزامات.</li>
+                        <li>تقديم ضمانات واضحة لجودة تنفيذ الخدمات وفق ضوابط تعاقدية محددة.</li>
+                        <li>توفير أسعار شفافة للخدمات المنفردة والباقات.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- سادساً: تحليل الميزة التنافسية الرقمية -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8 border-t-4 border-teal-300">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">التحول الرقمي وتطبيقات الهواتف الذكية</span>
+                <h2 class="text-2xl font-black text-white mt-1">سادساً: تحليل الميزة التنافسية الرقمية</h2>
+                <p class="text-xs md:text-sm text-teal-200 mt-1">من خلال تحليل الشركات الواردة في الدراسة، تظهر ملاحظة مهمة تتعلق بتوفر تطبيقات الهواتف الذكية.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card-dark motion-card p-5 rounded-2xl border-r-4 border-emerald-400">
+                        <p class="text-xs md:text-sm text-teal-100 mb-3">التطبيقات ظهرت لدى عدد من مقدمي الخدمات العامة الذين يخدمون الأفراد والمنشآت الصغيرة، مثل:</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs md:text-sm font-bold text-emerald-200">
+                            <li>منصة الأعمال.</li>
+                            <li>شامل.</li>
+                            <li>سند.</li>
+                            <li>خدماتي.</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card-dark motion-card p-5 rounded-2xl border-r-4 border-amber-400">
+                        <p class="text-xs md:text-sm text-teal-100 mb-3">في المقابل، لم يتم التحقق من وجود تطبيق مستقل لدى الشركات التي تعتمد على بيع باقات متكاملة للمنشآت، مثل:</p>
+                        <ul class="list-disc list-inside space-y-1 text-xs md:text-sm font-bold text-amber-200">
+                            <li>تنفيذ.</li>
+                            <li>تعامد.</li>
+                            <li>Easy HR.</li>
+                            <li>Motaded.</li>
+                            <li>The Right Way.</li>
+                            <li>Noble Core.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 glass-card-dark motion-card p-6 rounded-2xl border border-cyan-400/40 bg-gradient-to-br from-teal-950/90 to-cyan-950/50 flex flex-col justify-between">
+                    <div>
+                        <span class="bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">الاستنتاج</span>
+                        <p class="text-sm md:text-base text-white font-semibold mb-4">توجد فرصة تنافسية لركاز في تطوير منصة رقمية موجهة للشركات والمنشآت، تتيح للعميل:</p>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs md:text-sm text-teal-100 mb-4">
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>طلب الخدمات الحكومية.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>رفع المستندات والوثائق.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>متابعة حالة كل معاملة.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>معرفة المتطلبات والوثائق الناقصة.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>استقبال التنبيهات بمواعيد انتهاء الإقامات والتراخيص.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>متابعة حالة الموظفين.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>الاطلاع على تقارير الخدمات المنفذة.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>إدارة الاشتراكات والفواتير.</li>
+                            <li class="bg-teal-900/50 p-2.5 rounded-xl border border-teal-700/50 flex items-center gap-2 sm:col-span-2"><span class="w-2 h-2 rounded-full bg-cyan-400 flex-shrink-0"></span>التواصل مع فريق التنفيذ.</li>
+                        </ul>
+                    </div>
+                    <p class="text-xs md:text-sm text-cyan-200 bg-cyan-950/60 p-3.5 rounded-xl border border-cyan-500/30">
+                        ويمكن أن يشكل هذا التوجه ميزة تنافسية مهمة إذا تم تنفيذه بطريقة عملية وسهلة الاستخدام.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- سابعاً: التوصيات الاستراتيجية لشركة ركاز -->
+        <section class="glass-card motion-reveal rounded-3xl p-6 md:p-8">
+            <div class="border-b border-teal-700/50 pb-4 mb-6">
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-wider">خارطة الطريق التنفيذية</span>
+                <h2 class="text-2xl font-black text-white mt-1">سابعاً: التوصيات الاستراتيجية لشركة ركاز</h2>
+                <p class="text-xs md:text-sm text-teal-200 mt-1">بناءً على تحليل الخدمات ونماذج المنافسة والأسعار، يوصى بالعمل على المحاور التالية:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- 1. تطوير باقات الخدمات -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-amber-400 flex flex-col justify-between">
+                    <div>
+                        <h3 class="font-black text-white text-base mb-2">1. تطوير باقات الخدمات</h3>
+                        <p class="text-xs text-teal-200 mb-3">إنشاء ثلاث فئات رئيسية من الاشتراكات:</p>
+                        <div class="space-y-2.5 text-xs text-teal-100 leading-relaxed">
+                            <div class="bg-teal-950/70 p-3 rounded-xl border border-teal-800">
+                                <strong class="text-teal-300 block">الباقة الأساسية:</strong>
+                                تستهدف المنشآت الصغيرة، وتشمل خدمات الموارد البشرية الأساسية ومتابعة المنصات والتراخيص والتجديدات.
+                            </div>
+                            <div class="bg-teal-950/70 p-3 rounded-xl border border-teal-800">
+                                <strong class="text-cyan-300 block">الباقة المتقدمة:</strong>
+                                تستهدف المنشآت المتوسطة، وتشمل إدارة الموارد البشرية والعلاقات الحكومية والتأمينات ومدد والتراخيص والخدمات الإدارية.
+                            </div>
+                            <div class="bg-teal-950/70 p-3 rounded-xl border border-teal-800">
+                                <strong class="text-amber-300 block">الباقة المتكاملة:</strong>
+                                تستهدف الشركات الكبيرة والمصانع، وتشمل الخدمات الحكومية والموارد البشرية والتراخيص الصناعية والتجارية وخدمات فسح وسابر وصناعي والمتابعة التشغيلية الدورية.
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-[11px] text-amber-200 mt-3 pt-2.5 border-t border-teal-800">يتم تحديد الأسعار بعد دراسة تكاليف التنفيذ وعدد المعاملات وحجم المنشأة ونطاق المسؤوليات.</p>
+                </div>
+
+                <!-- 2. اعتماد تسعير مرن -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-teal-400">
+                    <h3 class="font-black text-white text-base mb-2">2. اعتماد تسعير مرن</h3>
+                    <p class="text-xs text-teal-200 mb-3">يوصى بتوفير ثلاثة نماذج للتسعير:</p>
+                    <ul class="list-disc list-inside space-y-2 text-xs md:text-sm text-teal-100 leading-relaxed">
+                        <li>اشتراكات شهرية وسنوية.</li>
+                        <li>تسعير منفصل للمعاملات الفردية.</li>
+                        <li>تسعير خاص للخدمات الصناعية والتجارية المتخصصة.</li>
+                    </ul>
+                </div>
+
+                <!-- 3. التركيز على الخدمات ذات التخصص العالي -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-cyan-400">
+                    <h3 class="font-black text-white text-base mb-2">3. التركيز على الخدمات ذات التخصص العالي</h3>
+                    <p class="text-xs text-teal-200 mb-2">ينبغي عدم حصر النشاط في خدمات الموارد البشرية التقليدية، بل تعزيز خدمات:</p>
+                    <ul class="list-disc list-inside space-y-1 text-xs md:text-sm text-teal-100 mb-3">
+                        <li>فسح.</li>
+                        <li>سابر.</li>
+                        <li>صناعي.</li>
+                        <li>مواءمة.</li>
+                        <li>التقييم الذاتي.</li>
+                        <li>تصاريح أمن الطرق.</li>
+                        <li>خدمات التراخيص الصناعية.</li>
+                    </ul>
+                    <p class="text-xs text-cyan-200">وذلك لبناء تميز واضح أمام الشركات التي تركز بصورة أساسية على خدمات قوى ومقيم ومدد.</p>
+                </div>
+
+                <!-- 4. تطوير نظام متابعة العملاء -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-emerald-400">
+                    <h3 class="font-black text-white text-base mb-2">4. تطوير نظام متابعة العملاء</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed">إنشاء آلية تشغيلية تتيح متابعة كل معاملة من وقت استلامها حتى إنجازها، مع إرسال تحديثات دورية للعميل.</p>
+                </div>
+
+                <!-- 5. تقديم ضمانات تعاقدية -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-amber-300">
+                    <h3 class="font-black text-white text-base mb-2">5. تقديم ضمانات تعاقدية</h3>
+                    <p class="text-xs md:text-sm text-teal-100 leading-relaxed mb-2">دراسة تقديم ضمانات مرتبطة بجودة التنفيذ والالتزام بالإجراءات ومواعيد المتابعة، مع تحديد المسؤوليات والاستثناءات بوضوح في العقود.</p>
+                    <p class="text-xs md:text-sm text-amber-100 leading-relaxed">ويمكن دراسة نموذج تحمل الغرامات الناتجة عن الأخطاء التشغيلية الذي تعلنه شركة The Right Way، بما يتناسب مع قدرة ركاز التشغيلية والقانونية.</p>
+                </div>
+
+                <!-- 6. تعزيز الحضور الرقمي -->
+                <div class="glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-teal-300">
+                    <h3 class="font-black text-white text-base mb-2">6. تعزيز الحضور الرقمي</h3>
+                    <p class="text-xs text-teal-200 mb-2">إنشاء موقع إلكتروني احترافي يحتوي على:</p>
+                    <ul class="list-disc list-inside space-y-1 text-xs text-teal-100 mb-3">
+                        <li>عرض تفصيلي للخدمات.</li>
+                        <li>عرض الباقات والأسعار.</li>
+                        <li>نماذج طلب عروض الأسعار.</li>
+                        <li>صفحات متخصصة لكل خدمة.</li>
+                        <li>قنوات التواصل المباشر.</li>
+                        <li>محتوى توعوي حول متطلبات المنصات الحكومية.</li>
+                        <li>نظام لمتابعة طلبات العملاء.</li>
+                    </ul>
+                    <p class="text-xs text-teal-200 font-semibold">كما يوصى بدراسة تطوير تطبيق خاص بالمنشآت.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ثامناً: الخلاصة التنفيذية + ملاحظات منهجية مهمة -->
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- الخلاصة التنفيذية -->
+            <div class="lg:col-span-8 glass-card motion-reveal rounded-3xl p-6 md:p-8 border-2 border-amber-400/40 bg-gradient-to-br from-teal-900/70 via-teal-950/80 to-cyan-950/70">
+                <div class="border-b border-teal-700/50 pb-4 mb-6">
+                    <span class="bg-amber-500/20 text-amber-300 border border-amber-400/40 text-xs font-bold px-3.5 py-1 rounded-full inline-block mb-2">
+                        الرؤية الاستراتيجية الختامية
+                    </span>
+                    <h2 class="text-2xl font-black text-white">ثامناً: الخلاصة التنفيذية</h2>
+                </div>
+
+                <div class="space-y-4 text-xs md:text-sm text-teal-100 leading-relaxed">
+                    <p>يوضح تحليل السوق السعودي وجود منافسة متنوعة في قطاع الخدمات الحكومية والعلاقات الحكومية والموارد البشرية، حيث تنقسم الجهات المنافسة إلى مكاتب تعقيب تعتمد على تنفيذ المعاملات الفردية، ومنصات رقمية تتيح الوصول إلى مقدمي الخدمات، وشركات متخصصة تقدم باقات شهرية وسنوية للمنشآت.</p>
+                    <p class="font-bold text-white">وتعد الشركات التالية من أبرز المنافسين الذين ينبغي أن تركز ركاز على متابعتهم:</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-amber-400">1. تنفيذ Tanfeth: من أقرب المنافسين من حيث تنوع الخدمات والباقات.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-amber-400">2. The Right Way: منافس قوي في تعهيد الموارد البشرية والامتثال.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-amber-400">3. Motaded: منافس في خدمات الموظفين والمنصات الحكومية والتوطين.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-amber-400">4. تعامد Taamud: منافس في الباقات السنوية والخدمات الإدارية.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-cyan-400">5. Easy HR: منافس سعري في باقات الموارد البشرية.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-cyan-400">6. Noble Core: منافس في خدمات العلاقات الحكومية والمتابعة الشهرية.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-teal-400">7. منصة الأعمال: منافس في إنجاز المعاملات الحكومية وتوفير التطبيقات.</div>
+                        <div class="glass-card-dark p-3 rounded-xl border-r-4 border-teal-400">8. شامل: منافس في التعقيب والخدمات الحكومية من خلال التطبيقات.</div>
+                    </div>
+
+                    <p class="font-bold text-white pt-2">وتشير الدراسة إلى وجود ثلاث فرص رئيسية أمام ركاز:</p>
+
+                    <div class="space-y-2.5">
+                        <div class="bg-teal-950/75 p-4 rounded-2xl border border-teal-700/70">
+                            <strong class="text-amber-300 block mb-1">الفرصة الأولى: التميز في الخدمات المتكاملة</strong>
+                            تقديم خدمات الموارد البشرية والعلاقات الحكومية والخدمات التجارية والصناعية ضمن منظومة واحدة، بما يقلل حاجة المنشأة إلى التعامل مع عدة مزودين.
+                        </div>
+                        <div class="bg-teal-950/75 p-4 rounded-2xl border border-teal-700/70">
+                            <strong class="text-cyan-300 block mb-1">الفرصة الثانية: التميز في الخدمات الصناعية</strong>
+                            استهداف المصانع والمستوردين والمصدرين بخدمات فسح وسابر وصناعي والتراخيص الصناعية والمطابقة، باعتبارها مجالاً لم تظهر فيه باقات متخصصة بأسعار معلنة بصورة واضحة ضمن المنافسين الذين شملتهم الدراسة.
+                        </div>
+                        <div class="bg-teal-950/75 p-4 rounded-2xl border border-teal-700/70">
+                            <strong class="text-emerald-300 block mb-1">الفرصة الثالثة: التميز الرقمي</strong>
+                            تطوير تجربة رقمية موجهة للمنشآت تتيح طلب الخدمات ومتابعتها وإدارة الاشتراكات والتراخيص والموظفين من خلال قناة واحدة.
+                        </div>
+                    </div>
+
+                    <p class="bg-amber-950/35 p-4 rounded-2xl border border-amber-500/40 text-amber-50">
+                        وبناءً على ذلك، فإن التوجه الأنسب لركاز هو بناء نموذج عمل قائم على الاشتراكات التشغيلية المتكاملة، مع توفير خدمات منفردة وتسعير خاص للخدمات المتخصصة، والاستثمار في تجربة العميل الرقمية، بما يساعد على بناء علاقة طويلة الأجل مع المنشآت بدلاً من الاعتماد على تنفيذ المعاملات الفردية فقط.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ملاحظات منهجية مهمة -->
+            <div class="lg:col-span-4 glass-card motion-reveal rounded-3xl p-6 md:p-8 flex flex-col justify-between border-t-4 border-teal-400">
+                <div>
+                    <span class="text-xs font-bold text-teal-300 uppercase tracking-wider">الضوابط البحثية والنظامية</span>
+                    <h2 class="text-xl font-black text-white mt-1 mb-5">ملاحظات منهجية مهمة:</h2>
+                    <ol class="list-decimal list-inside space-y-3 text-xs md:text-sm text-teal-100 leading-relaxed bg-teal-950/75 p-5 rounded-2xl border border-teal-800/80">
+                        <li>تم إدراج الشركات الخاصة ومكاتب الخدمات والمنصات التجارية، واستبعاد الجهات الحكومية من قائمة المنافسين.</li>
+                        <li>الأسعار الواردة هي الأسعار المنشورة في ملف تحليل المنافسين وقت إعداده في نوفمبر 2026، وقد تتغير.</li>
+                        <li>لم يتم التحقق من وجود تطبيق مستقل لكل شركة إلا حيث ورد ذلك صراحة في ملف البحث.</li>
+                        <li>عدم ذكر سعر أو تطبيق لا يعني بالضرورة عدم وجوده؛ بل يعني عدم توفر معلومة مؤكدة ضمن المصادر المستخدمة.</li>
+                        <li>يجب الحصول على عروض أسعار حديثة ومباشرة قبل اعتماد المقارنة السعرية النهائية.</li>
+                        <li>تنفيذ الخدمات الحكومية يكون وفق التفويض والصلاحيات النظامية الممنوحة للمنشأة ومقدم الخدمة، ولا يعني امتلاك الشركات صلاحية إصدار الموافقات الحكومية بنفسها.</li>
+                    </ol>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-teal-800/70 flex items-center justify-between text-xs">
+                    <span class="text-teal-300">شركة ركاز</span>
+                    <span class="font-bold text-cyan-300">نوفمبر 2026</span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- عناصر عائمة سفلية (الشعار المتحرك المتوهج + واتساب) -->
+    <div class="fixed bottom-5 left-5 z-50 flex items-center gap-3">
+        <div class="floating-glow-logo bg-teal-900/90 backdrop-blur-md p-1.5 rounded-2xl border-2 border-teal-400/80" title="شعار الشركة">
+            <img src="https://i.ibb.co/3mcGJZDm/f7a2f35c-a1d9-41a9-abab-883812218eaf.jpg" alt="الشعار" class="w-11 h-11 object-cover rounded-xl">
+        </div>
+        <a href="https://wa.me/966578310776" target="_blank" rel="noopener noreferrer"
+           class="bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 rounded-2xl shadow-2xl transition-transform hover:scale-105 border-2 border-emerald-300"
+           title="تواصل عبر واتساب">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- كود JavaScript لبناء كافة الأقسام والجداول والبطاقات بالنص الكامل -->
+    <script>
+        try {
+            // 1. بيانات خدمات شركة ركاز التشغيلية كاملة
+            const rekazServicesData = [
+                {
+                    title: "أ. خدمات الموارد البشرية",
+                    accent: "teal",
+                    subgroups: [
+                        {
+                            name: "منصة قوى:",
+                            items: [
+                                "إنشاء عقود العمل ومتابعة عقود الموظفين.",
+                                "متابعة طلبات نقل الخدمات.",
+                                "متابعة رخص العمل والإجراءات المرتبطة بها.",
+                                "متابعة حالات الموظفين والتنبيهات المتعلقة بالمنشأة.",
+                                "متابعة طلبات تغيير المهنة عند استيفاء الشروط.",
+                                "مراجعة بيانات المنشأة والموظفين.",
+                                "مساعدة العملاء في فهم ملاحظات المنصة ومتطلبات استكمال الطلبات.",
+                                "مراجعة نطاق المنشأة والإفصاح عن بيانات التدريب وفق التزامات العميل.",
+                                "إنشاء أو مراجعة لوائح العمل الداخلية."
+                            ]
+                        },
+                        {
+                            name: "منصة مقيم:",
+                            items: [
+                                "متابعة تواريخ انتهاء الإقامات.",
+                                "متابعة تأشيرات الخروج والعودة والخروج النهائي.",
+                                "إعداد تقارير الموظفين وبيانات الإقامة.",
+                                "التنبيه بمواعيد التجديد والإجراءات المطلوبة.",
+                                "متابعة الطلبات التي تنفذها المنشأة عبر المنصة.",
+                                "استكمال إجراءات نقل الخدمات أو إصدار الإقامات للموظفين الجدد."
+                            ]
+                        },
+                        {
+                            name: "التأمينات الاجتماعية:",
+                            items: [
+                                "مراجعة بيانات الأجور المسجلة.",
+                                "متابعة حالات الاشتراك.",
+                                "مطابقة بيانات الموظفين مع سجلات الموارد البشرية.",
+                                "متابعة الملاحظات المتعلقة بالاشتراكات.",
+                                "إعداد تقارير دورية بالموظفين المسجلين وحالاتهم."
+                            ]
+                        },
+                        {
+                            name: "منصة مدد:",
+                            items: [
+                                "متابعة متطلبات حماية الأجور.",
+                                "مراجعة ملفات الأجور.",
+                                "مطابقة مسيرات الرواتب مع الموظفين.",
+                                "متابعة الملاحظات على ملفات الرواتب.",
+                                "المساعدة في تجهيز ملفات الرواتب ورفعها وفق متطلبات المنصة.",
+                                "متابعة حالات الالتزام والتنبيهات."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "ب. خدمات العلاقات الحكومية",
+                    accent: "cyan",
+                    subgroups: [
+                        {
+                            name: "منصة بلدي:",
+                            items: [
+                                "إصدار الرخص التجارية.",
+                                "متابعة رخص الأنشطة التجارية.",
+                                "متابعة تواريخ انتهاء الرخص.",
+                                "تجهيز المتطلبات ومتابعة الطلبات.",
+                                "تجديد الرخص التجارية."
+                            ]
+                        },
+                        {
+                            name: "المركز السعودي للأعمال:",
+                            items: [
+                                "المساعدة في إجراءات الخدمات التجارية المتاحة للمنشأة.",
+                                "متابعة الطلبات والتحديثات المسموح بها.",
+                                "تنظيم بيانات المنشأة ومواعيد استحقاق الإجراءات.",
+                                "تجديد السجلات التجارية."
+                            ]
+                        },
+                        {
+                            name: "منصة سلامة والدفاع المدني:",
+                            items: [
+                                "إصدار رخص السلامة.",
+                                "تجديد الرخص ومتابعة الإجراءات المرتبطة بها."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "ج. خدمات المنشآت والتوظيف والامتثال",
+                    accent: "emerald",
+                    subgroups: [
+                        {
+                            name: "خدمات هدف:",
+                            items: [
+                                "استقطاب الكفاءات ونشر الفرص الوظيفية.",
+                                "استعراض السير الذاتية للمرشحين.",
+                                "متابعة برامج دعم التوظيف.",
+                                "المساعدة في الاستفادة من برامج الدعم المالي.",
+                                "دعم المنشآت في تحقيق نسب التوطين.",
+                                "متابعة برامج التدريب وتأهيل الموظفين."
+                            ]
+                        },
+                        {
+                            name: "خدمات وزارة الموارد البشرية:",
+                            items: [
+                                "إدارة ملفات المنشآت وفتح وتحديث البيانات.",
+                                "ربط الفروع.",
+                                "إدارة صلاحيات المستخدمين والمفوضين.",
+                                "متابعة تغيير النطاق والكيان.",
+                                "تحديث بيانات الموظفين غير السعوديين."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "د. خدمات الغرف التجارية ووزارة الخارجية",
+                    accent: "amber",
+                    subgroups: [
+                        {
+                            name: "الغرف التجارية:",
+                            items: [
+                                "تصديق العقود التجارية وعقود العمل والشراكة والتأسيس.",
+                                "تصديق الخطابات الموجهة للجهات الحكومية والبنوك والسفارات.",
+                                "تصديق الفواتير والمستندات التجارية.",
+                                "التوقيع الإلكتروني.",
+                                "إصدار وتجديد شهادات الاشتراك.",
+                                "تعديل بيانات العضوية والمفوضين.",
+                                "إضافة وحذف الفروع.",
+                                "إصدار شهادات المنشأ."
+                            ]
+                        },
+                        {
+                            name: "وزارة الخارجية:",
+                            items: [
+                                "طلب تأشيرات العمل.",
+                                "تأشيرات الزيارة التجارية.",
+                                "تأشيرات الزيارة الشخصية لمنسوبي المنشأة.",
+                                "تصديق الوثائق التجارية.",
+                                "تصديق الشهادات والمستندات الخارجية.",
+                                "تفويض مكاتب الاستقدام.",
+                                "التحقق من صحة التأشيرات."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "هـ. الخدمات الصناعية والتجارية",
+                    accent: "cyan",
+                    subgroups: [
+                        {
+                            name: "منصة فسح:",
+                            items: [
+                                "تسجيل المنشآت وفتح حسابات الموردين.",
+                                "إدارة الحسابات وتحديث البيانات.",
+                                "التفويض الجمركي وتفويض المخلصين.",
+                                "متابعة الشحنات وحالتها.",
+                                "متابعة البيانات الجمركية والاستعلام والطباعة.",
+                                "متابعة المدفوعات والفواتير والسداد."
+                            ]
+                        },
+                        {
+                            name: "منصة سابر:",
+                            items: [
+                                "فتح حساب المنشأة.",
+                                "تسجيل المنتجات.",
+                                "تحديد رمز HS Code مبدئياً والتحقق من التصنيف.",
+                                "متابعة شهادات المطابقة والتنسيق مع جهات المطابقة.",
+                                "إصدار الإقرارات الذاتية وفق صلاحيات المنشأة.",
+                                "إصدار شهادات الإرساليات ومتابعة الطلبات والملاحظات."
+                            ]
+                        },
+                        {
+                            name: "منصة صناعي:",
+                            items: [
+                                "إنشاء حساب المنشأة.",
+                                "إصدار وتجديد وتعديل التراخيص الصناعية.",
+                                "متابعة الإعفاءات الجمركية للآلات والمواد الخام.",
+                                "متابعة تأييد العمالة الوافدة.",
+                                "تحديث بيانات المصنع وبطاقة المصنع.",
+                                "متابعة الفسح الكيميائي وإذن الاستيراد.",
+                                "متابعة شهادات المنشأ والحوافز وبرامج الدعم الصناعي."
+                            ]
+                        },
+                        {
+                            name: "التقييم الذاتي ومواءمة:",
+                            items: [
+                                "مراجعة امتثال المنشأة وفحص وضعها قبل التقييم.",
+                                "تعبئة التقييم الذاتي بالتنسيق مع المنشأة.",
+                                "دراسة جاهزية المنشأة.",
+                                "مراجعة سياسات الموارد البشرية.",
+                                "مراجعة بيئة العمل والمرافق.",
+                                "تجهيز الأدلة والمستندات بالتنسيق مع العميل.",
+                                "تقديم الطلب ومتابعته.",
+                                "التنسيق مع المدقق ومتابعة إصدار الشهادة."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "و. خدمات إضافية",
+                    accent: "teal",
+                    subgroups: [
+                        {
+                            name: "منصة تم:",
+                            items: [
+                                "تسجيل المركبات ومتابعة بياناتها.",
+                                "تجديد الاستمارات.",
+                                "نقل ملكية المركبات.",
+                                "إصدار وإلغاء التفويضات.",
+                                "إضافة أو تغيير السائق.",
+                                "الاستعلام عن المخالفات.",
+                                "التحقق من التأمين.",
+                                "متابعة إذن إصدار الإصلاح."
+                            ]
+                        },
+                        {
+                            name: "منصة أمن:",
+                            items: [
+                                "استخراج شهادات خلو السوابق للموظفين عند الحاجة.",
+                                "التحقق من صلاحية الشهادات.",
+                                "استخراج تصاريح أمن الطرق للمنشآت العاملة في مشاريع الطرق.",
+                                "متابعة التصاريح الأمنية المطلوبة لبعض الأنشطة.",
+                                "متابعة طلبات المنشآت لدى الأمن العام."
+                            ]
+                        },
+                        {
+                            name: "التأمين الطبي:",
+                            items: [
+                                "متابعة خدمات التأمين الطبي وفق احتياجات المنشآت."
+                            ]
+                        }
+                    ]
+                }
+            ];
+
+            const rekazGrid = document.getElementById('rekaz-services-grid');
+            if (rekazGrid) {
+                rekazServicesData.forEach((group, gIdx) => {
+                    const el = document.createElement('div');
+                    el.className = `glass-card-dark motion-card rounded-2xl p-5 border-t-4 border-${group.accent}-400 flex flex-col justify-between`;
+                    const subHtml = group.subgroups.map((sg, sIdx) => `
+                        <div class="bg-teal-950/75 rounded-xl border border-teal-800/80 overflow-hidden mb-2 last:mb-0">
+                            <button type="button" class="accordion-btn w-full px-3 py-2 text-right flex items-center justify-between gap-2 hover:bg-teal-900/50 transition-colors" data-target="rkz-${gIdx}-${sIdx}">
+                                <span class="font-bold text-xs text-${group.accent}-300">${sg.name} (${sg.items.length})</span>
+                                <span class="text-white font-bold text-sm" id="icon-rkz-${gIdx}-${sIdx}">−</span>
+                            </button>
+                            <div id="rkz-${gIdx}-${sIdx}" class="px-3 pb-2.5 pt-1 text-xs text-teal-100 leading-relaxed border-t border-teal-800/50">
+                                <ul class="list-disc list-inside space-y-1">
+                                    ${sg.items.map(i => `<li>${i}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `).join('');
+
+                    el.innerHTML = `
+                        <div>
+                            <h4 class="font-black text-white text-base mb-3">${group.title}</h4>
+                            ${subHtml}
+                        </div>
+                    `;
+                    rekazGrid.appendChild(el);
+                });
+            }
+
+            // 2. بيانات الأقسام الأربعة للشركات المنافسة (19 شركة) كاملة
+            const competitorSections = [
+                {
+                    title: "القسم الأول: الشركات ومكاتب الخدمات الحكومية التي تمتلك تطبيقات إلكترونية",
+                    desc: "تتميز هذه الفئة بتقديم الخدمات للأفراد والمنشآت عبر قنوات رقمية، وتتيح للعميل طلب المعاملة ومتابعتها دون الحاجة إلى التعامل المباشر والمستمر مع المكتب.",
+                    accent: "emerald",
+                    companies: [
+                        {
+                            name: "1. منصة الأعمال للخدمات العامة",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://alaamal.com.sa"] },
+                                { label: "تطبيق الهواتف الذكية:", list: ["متوفر على Google Play.", "متوفر على App Store."] },
+                                { label: "طبيعة النشاط:", text: "تقدم المنصة خدمات عامة وتعقيباً وإنجازاً للمعاملات الحكومية للأفراد والمنشآت، وتوفر مجموعة كبيرة من الخدمات من خلال موقعها وتطبيقاتها." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["إصدار وتجديد الرخص البلدية التجارية.", "إصدار تراخيص الدفاع المدني.", "التسجيل في منصة مدد.", "تصديق المستندات من الغرف التجارية.", "تقديم الإقرارات الزكوية.", "التعقيب والمراجعة الميدانية.", "تنفيذ المعاملات الحكومية المتنوعة."] },
+                                { label: "الأسعار المعلنة:", list: ["إصدار رخصة بلدية تجارية: 250 ريالاً.", "تجديد رخصة بلدية تجارية: 200 ريال.", "إصدار ترخيص الدفاع المدني: 250 ريالاً.", "التسجيل في منصة مدد: 150 ريالاً.", "تصديق مستند من الغرفة التجارية: 150 ريالاً.", "تقديم الإقرارات الزكوية: 300 ريال.", "التعقيب والمراجعة الميدانية: 300 ريال."] },
+                                { label: "ملاحظات تنافسية:", list: ["تعلن المنصة عن تقديم أكثر من 300 خدمة.", "تشير إلى التكامل مع أكثر من 30 جهة حكومية.", "لديها صفحة مخصصة لباقات الأعمال.", "تعتمد على نموذج تسعير المعاملة الواحدة إلى جانب الباقات."] },
+                                { label: "رابط الباقات:", links: ["https://alaamal.com.sa/packages"] },
+                                { label: "أبرز نقاط القوة:", text: "وجود تطبيقات للهواتف الذكية، وتعدد الخدمات، ووضوح أسعار مجموعة من المعاملات، مما يجعلها منافساً مهماً في سهولة الوصول للخدمات الحكومية وتنفيذها.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "2. شركة شامل Shamel",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://www.shamel.sa"] },
+                                { label: "تطبيق الهواتف الذكية:", list: ["متوفر على Google Play.", "متوفر على App Store.", "التطبيق مجاني للتنزيل."] },
+                                { label: "طبيعة النشاط:", text: "تقدم الشركة خدمات التعقيب وإنجاز المعاملات الحكومية، ويقع مقرها في مدينة الدمام، وتعتمد على شبكة من المعقبين المعتمدين لتنفيذ الخدمات." },
+                                { label: "الخدمات المنافسة لركاز:", text: "تندرج خدمات الشركة ضمن تنفيذ المعاملات الحكومية والتعقيب للأفراد والمنشآت، مع إمكانية طلب الخدمات ومتابعتها عبر التطبيق." },
+                                { label: "الأسعار المعلنة:", text: "لم يتم العثور على أسعار معلنة للخدمات في ملف الدراسة." },
+                                { label: "ملاحظات تنافسية:", list: ["تعتمد على المعقبين المعتمدين.", "توفر ضمان استرداد مالي بنسبة 100% وفق ما تعلنه.", "توفر قناة رقمية لطلب الخدمات."] },
+                                { label: "أبرز نقاط القوة:", text: "الاعتماد على التطبيق في استقبال الطلبات، وتوفير شبكة من منفذي المعاملات، مع تقديم ضمان مالي يعزز ثقة العميل.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "3. تطبيق سند Sanad",
+                            blocks: [
+                                { label: "رابط التطبيق:", links: ["https://apps.apple.com/ae/app/sanad-سند/id6756871216"] },
+                                { label: "الموقع الإلكتروني:", text: "لم يتم تحديد موقع إلكتروني مستقل في ملف الدراسة." },
+                                { label: "تطبيق الهواتف الذكية:", text: "متوفر على App Store وفق الرابط المدرج." },
+                                { label: "طبيعة النشاط:", text: "يعمل التطبيق بنظام السوق الإلكتروني، حيث يتيح للعميل اختيار مقدم الخدمة والاتفاق معه من خلال التطبيق." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["خدمات أبشر أعمال.", "خدمات وزارة التجارة.", "خدمات منصة مدد.", "خدمات منصة قوى.", "خدمات منصة بلدي.", "معاملات الأفراد والمنشآت."] },
+                                { label: "الأسعار المعلنة:", text: "لا توجد أسعار ثابتة؛ إذ يعتمد التطبيق على اتفاق العميل مع مقدم الخدمة داخل المنصة." },
+                                { label: "أبرز نقاط القوة:", list: ["توفير أكثر من مقدم خدمة.", "إتاحة التواصل المباشر.", "توفير المحادثة على مدار الساعة.", "تنوع الخدمات الموجهة للأفراد والشركات."] },
+                                { label: "الفرصة التنافسية لركاز:", text: "يمكن الاستفادة من نموذج التطبيق في تطوير تجربة رقمية تسمح للعميل بطلب الخدمة والتواصل مع فريق التنفيذ ومتابعة حالة المعاملة.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "4. تطبيق خدماتي",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://khadamaty.sa"] },
+                                { label: "تطبيق الهواتف الذكية:", list: ["متوفر على Google Play.", "متوفر على App Store."] },
+                                { label: "طبيعة النشاط:", text: "منصة رقمية لتقديم الخدمات الحكومية والإدارية للأفراد والمنشآت." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["خدمات منصة بلدي.", "خدمات وزارة التجارة.", "خدمات منصة قوى.", "خدمات الموارد البشرية.", "معاملات المنشآت الحكومية."] },
+                                { label: "الأسعار المعلنة:", text: "لم يتم العثور على أسعار واضحة للخدمات في ملف الدراسة." },
+                                { label: "أبرز نقاط القوة:", list: ["توفير تطبيق للهواتف الذكية.", "تقديم خدمات متعددة من خلال قناة رقمية.", "تسهيل الوصول إلى الخدمات الحكومية."], highlight: true }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "القسم الثاني: مكاتب التعقيب والخدمات الحكومية التي تعتمد على الموقع الإلكتروني وواتساب",
+                    desc: "تستهدف هذه الفئة العملاء الذين يحتاجون إلى تنفيذ معاملة محددة، وتنافس ركاز في خدمات الإنجاز المباشر، دون الاعتماد بالضرورة على الاشتراكات الشهرية.",
+                    accent: "cyan",
+                    companies: [
+                        {
+                            name: "5. المعقب الإلكتروني",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://moaqeb.com"] },
+                                { label: "صفحة الأسعار:", links: ["https://moaqeb.com/our-prices"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["توثيق عقود العمل في منصة قوى.", "طلبات التأمينات الاجتماعية.", "نقل الخدمات.", "تعديل المهن.", "معاملات الموارد البشرية والخدمات الحكومية."] },
+                                { label: "الأسعار المعلنة:", list: ["توثيق عقد عمل في قوى: يبدأ من 99 ريالاً.", "طلبات التأمينات الاجتماعية: من 150 إلى 300 ريال.", "نقل الخدمات: من 400 إلى 1,000 ريال.", "تعديل المهنة: من 400 إلى 1,000 ريال."] },
+                                { label: "أبرز نقاط القوة:", text: "وضوح أسعار مجموعة من الخدمات، وإتاحة تنفيذ معاملات محددة دون الحاجة إلى الاشتراك في باقة شهرية.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "6. منصة تعقيب Taqeb",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://taqeb.com"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "منصة متخصصة في إنجاز المعاملات الحكومية والتعقيب." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["المعاملات الحكومية.", "خدمات المنشآت.", "معاملات الموارد البشرية.", "خدمات التعقيب ومتابعة الطلبات."] },
+                                { label: "الأسعار المعلنة:", text: "غير معلنة." },
+                                { label: "مؤشرات التشغيل المعلنة:", list: ["أكثر من 5,000 معاملة.", "متوسط إنجاز معلن يبلغ 48 ساعة."] },
+                                { label: "أبرز نقاط القوة:", text: "التركيز على سرعة الإنجاز وتوفير خدمات المعاملات من خلال منصة متخصصة.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "7. مكتب المعقب",
+                            blocks: [
+                                { label: "المواقع الإلكترونية:", links: ["https://almueaqab.com", "https://elmuaqib.com"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "خدمات التعقيب وإنجاز المعاملات الحكومية." },
+                                { label: "الخدمات المنافسة لركاز:", text: "تتداخل خدمات المكتب مع معاملات المنشآت والتراخيص والخدمات الحكومية التي تتطلب متابعة وتنفيذاً من خلال معقبين متخصصين." },
+                                { label: "الأسعار المعلنة:", text: "لم يتم تحديد أسعار معلنة في ملف الدراسة." }
+                            ]
+                        },
+                        {
+                            name: "8. الإنجاز السريع",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://alainjaz.com"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "خدمات إنجاز المعاملات والتعقيب والخدمات العامة." },
+                                { label: "الخدمات المنافسة لركاز:", text: "خدمات المعاملات الحكومية والتراخيص ومتابعة الطلبات." },
+                                { label: "الأسعار المعلنة:", text: "لم يتم تحديد أسعار معلنة في ملف الدراسة." }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "القسم الثالث: الشركات التي تقدم باقات متكاملة للمنشآت",
+                    desc: "تعد هذه الفئة الأقرب إلى نموذج عمل ركاز؛ لأنها لا تقتصر على تنفيذ معاملة منفردة، وإنما تقدم خدمات إدارية وحكومية مستمرة من خلال اشتراكات شهرية أو ربع سنوية أو سنوية.",
+                    accent: "amber",
+                    companies: [
+                        {
+                            name: "9. شركة تنفيذ Tanfeth",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://tanfeth.sa/government-service-packages"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم باقات متكاملة لإدارة الخدمات الحكومية للمنشآت، مع اختلاف مستوى التغطية وفقاً لنوع الاشتراك." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["منصة قوى.", "التأمينات الاجتماعية.", "وزارة التجارة.", "منصة بلدي.", "أبشر ومقيم.", "الزكاة والضريبة.", "منصة سلامة.", "التأمين الطبي.", "منصة مدد.", "خدمات تراخيص الاستثمار.", "منصة طاقات ضمن الباقة البلاتينية."] },
+                                { label: "الأسعار المعلنة لكل ثلاثة أشهر:", list: ["الباقة الفضية: 2,250 ريالاً.", "الباقة الذهبية: 3,400 ريال.", "الباقة البلاتينية: 5,000 ريال."] },
+                                { label: "الخصومات:", text: "خصم بنسبة 20% عند الاشتراك السنوي." },
+                                { label: "أبرز نقاط القوة:", list: ["تقديم باقات واضحة ومتدرجة.", "تغطية عدد كبير من المنصات الحكومية.", "توفير خيارات تناسب مستويات مختلفة من احتياجات المنشآت.", "تقديم خدمات إضافية ضمن الباقات الأعلى."], footerNote: "وتعد الشركة من أهم المنافسين المباشرين لركاز بسبب تقارب نطاق الخدمات ونموذج الاشتراك.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "10. شركة تعامد Taamud",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://taamud.sa/service-packages"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم خدمات إدارية وحكومية للمنشآت من خلال باقات سنوية." },
+                                { label: "الخدمات المنافسة لركاز:", text: "تتقاطع خدمات الشركة مع إدارة الموارد البشرية والمنصات الحكومية ومتابعة شؤون الموظفين والامتثال." },
+                                { label: "الأسعار المعلنة سنوياً:", list: ["باقة التأسيس: 6,000 ريال.", "باقة النمو: 11,000 ريال.", "باقة الريادة: 18,000 ريال."] },
+                                { label: "رسوم الموظفين:", text: "توجد رسوم إضافية تتراوح بين 400 و600 ريال لكل موظف." },
+                                { label: "خدمات إضافية:", text: "حماية الأجور عبر منصة مدد: 2,000 ريال." },
+                                { label: "أبرز نقاط القوة:", text: "توفير باقات سنوية بمستويات مختلفة، مع إمكانية تسعير الخدمات الإضافية وفقاً لحجم المنشأة واحتياجاتها.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "11. شركة Easy HR",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://easyhr-sa.com"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم حلول وخدمات الموارد البشرية وإدارة المنشآت من خلال اشتراكات شهرية." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["خدمات الموارد البشرية.", "إدارة ملفات الموظفين.", "متابعة متطلبات المنشآت.", "الخدمات الإدارية المرتبطة بالتوظيف والامتثال."] },
+                                { label: "الأسعار المعلنة شهرياً:", list: ["الباقة التأسيسية: 1,000 ريال، حتى 5 موظفين.", "باقة النمو: 2,000 ريال، حتى 15 موظفاً.", "الباقة الاحترافية: 3,500 ريال، حتى 30 موظفاً.", "الشركات الأكبر: يتم تحديد السعر حسب الطلب."] },
+                                { label: "أبرز نقاط القوة:", list: ["أسعار منخفضة نسبياً مقارنة بعدد من المنافسين.", "باقات شهرية واضحة.", "استهداف المنشآت الصغيرة والمتوسطة.", "إمكانية التوسع وفق حجم الشركة."], footerNote: "وتعد من المنافسين المهمين في الجانب السعري، خصوصاً عند استهداف المنشآت الصغيرة.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "12. شركة Motaded Limited",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://motaded.com.sa/hr-packages"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم خدمات الموارد البشرية وإدارة المنصات الحكومية والامتثال للمنشآت." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["منصة قوى.", "منصة مدد.", "التأمينات الاجتماعية.", "منصة مقيم.", "خدمات الموظفين.", "خدمات التوطين.", "متابعة الالتزامات الحكومية."] },
+                                { label: "الأسعار المعلنة لكل موظف شهرياً:", list: ["1,750 ريالاً.", "2,400 ريال.", "3,150 ريالاً."] },
+                                { label: "خدمة التوطين:", text: "7,000 ريال شهرياً لكل موظف سعودي." },
+                                { label: "أبرز نقاط القوة:", text: "تنوع مستويات التسعير وتقديم خدمات مرتبطة بالموارد البشرية والتوطين، مما يجعلها منافساً مباشراً في هذا القطاع.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "13. شركة The Right Way",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://rw.sa/en/services/hr-outsourcing"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تعهيد خدمات الموارد البشرية وتقديم حلول تشغيلية وإدارية للمنشآت." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["إدارة الموارد البشرية.", "خدمات المنصات الحكومية.", "قوى ومقيم ومدد.", "التأمينات الاجتماعية.", "الرواتب وحماية الأجور.", "متابعة الامتثال والتوطين.", "إدارة عقود الموظفين."] },
+                                { label: "الأسعار المعلنة شهرياً للمنشآت حتى 50 موظفاً:", list: ["3,500 ريال.", "5,000 ريال.", "7,500 ريال."] },
+                                { label: "ميزة تنافسية مهمة:", text: "تعلن الشركة عن تقديم ضمان مكتوب لتحمل الغرامات الحكومية الناتجة عن الأخطاء التي يرتكبها فريقها أثناء تنفيذ الخدمات." },
+                                { label: "أبرز نقاط القوة:", text: "الاعتماد على نموذج التعهيد الإداري، وتقديم ضمان مكتوب، وتوفير مستويات مختلفة من الخدمة.", footerNote: "ويعد نموذج ضمان الأخطاء التشغيلية نقطة جديرة بالدراسة عند تطوير العرض التجاري لركاز.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "14. شركة Noble Core",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://noblecoreksa.com/services/pro-mandoob"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم خدمات مندوب العلاقات الحكومية والمتابعة الشهرية للمنشآت." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["متابعة منصة قوى.", "متابعة منصة مدد.", "التأمينات الاجتماعية.", "خدمات مقيم.", "خدمات أبشر.", "متابعة معاملات المنشآت."] },
+                                { label: "الأسعار المعلنة:", text: "2,500 ريال شهرياً مقابل المتابعة الشهرية للخدمات المذكورة." },
+                                { label: "أبرز نقاط القوة:", text: "تقديم خدمة متابعة شهرية بسعر محدد، مما يجعلها منافساً مهماً في خدمات العلاقات الحكومية المستمرة.", highlight: true }
+                            ]
+                        },
+                        {
+                            name: "15. شركة Riz & Mona",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://www.rizmona.com/saudi/gro-services"] },
+                                { label: "تطبيق الهواتف الذكية:", text: "لم يتم التحقق من وجود تطبيق مستقل." },
+                                { label: "طبيعة النشاط:", text: "تقديم خدمات العلاقات الحكومية وخدمات مندوب المنشآت." },
+                                { label: "الخدمات المنافسة لركاز:", list: ["متابعة المعاملات الحكومية.", "خدمات العلاقات الحكومية.", "دعم المنشآت في الإجراءات الإدارية.", "خدمات GRO."] },
+                                { label: "الأسعار المعلنة:", text: "تبدأ خدمات العلاقات الحكومية من 3,000 ريال شهرياً." },
+                                { label: "ملاحظة:", text: "صفحة الأسعار قديمة نسبياً، ولذلك يجب التواصل مع الشركة للتحقق من السعر الحالي." },
+                                { label: "أبرز نقاط القوة:", text: "التركيز على خدمات العلاقات الحكومية بنظام الاشتراك الشهري.", highlight: true }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    title: "القسم الرابع: شركات إضافية تقدم خدمات إدارية وحكومية للمنشآت",
+                    desc: "هذه الشركات تمثل منافسين محتملين في بعض الخدمات، وتحتاج إلى تواصل مباشر للحصول على تفاصيل الخدمات والأسعار.",
+                    accent: "teal",
+                    companies: [
+                        {
+                            name: "16. شركة إحاطة Ehata",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://ehata.sa"] },
+                                { label: "النشاط:", text: "خدمات إدارية وحكومية للمنشآت." },
+                                { label: "الأسعار:", text: "غير معلنة، وتتطلب التواصل المباشر." },
+                                { label: "تطبيق موبايل:", text: "لم يتم التحقق من وجود تطبيق مستقل." }
+                            ]
+                        },
+                        {
+                            name: "17. شركة BOCO",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://boco.sa/admin-services"] },
+                                { label: "النشاط:", text: "خدمات إدارية ومساندة للأعمال والمنشآت." },
+                                { label: "الأسعار:", text: "غير معلنة." },
+                                { label: "تطبيق موبايل:", text: "لم يتم التحقق من وجود تطبيق مستقل." }
+                            ]
+                        },
+                        {
+                            name: "18. شركة AstroLabs",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://astrolabs.com/corporate-gro-services"] },
+                                { label: "النشاط:", text: "خدمات تأسيس الأعمال والعلاقات الحكومية ودعم الشركات في ممارسة أعمالها داخل المملكة." },
+                                { label: "الأسعار:", text: "غير معلنة، ويتم تحديدها من خلال التواصل مع الشركة." },
+                                { label: "تطبيق موبايل:", text: "لم يتم التحقق من وجود تطبيق مستقل." }
+                            ]
+                        },
+                        {
+                            name: "19. Business Setup Company",
+                            blocks: [
+                                { label: "الموقع الإلكتروني:", links: ["https://businesssetup.company/pro-services/"] },
+                                { label: "النشاط:", text: "خدمات تأسيس الشركات والخدمات الحكومية والعلاقات الحكومية." },
+                                { label: "الأسعار:", text: "غير معلنة في ملف الدراسة." },
+                                { label: "تطبيق موبايل:", text: "لم يتم التحقق من وجود تطبيق مستقل." }
+                            ]
+                        }
+                    ]
+                }
+            ];
+
+            const sectionsContainer = document.getElementById('competitors-sections-container');
+            if (sectionsContainer) {
+                competitorSections.forEach((sec) => {
+                    const secDiv = document.createElement('div');
+                    secDiv.className = `bg-teal-950/40 rounded-3xl p-5 md:p-6 border border-${sec.accent}-500/30`;
+
+                    const cardsHtml = sec.companies.map((comp) => {
+                        const blocksHtml = comp.blocks.map(b => {
+                            let content = '';
+                            if (b.links) {
+                                content = b.links.map(l => `<a href="${l}" target="_blank" rel="noopener noreferrer" class="text-cyan-300 underline break-all block" dir="ltr">${l}</a>`).join('');
+                            } else if (b.list) {
+                                content = `<ul class="list-disc list-inside space-y-1">${b.list.map(item => `<li>${item}</li>`).join('')}</ul>`;
+                            } else if (b.text) {
+                                content = `<p>${b.text}</p>`;
+                            }
+                            if (b.footerNote) {
+                                content += `<p class="mt-2 pt-2 border-t border-teal-700/50 font-semibold text-amber-200">${b.footerNote}</p>`;
+                            }
+
+                            const boxStyle = b.highlight
+                                ? `bg-${sec.accent}-500/15 border border-${sec.accent}-400/35 text-teal-50`
+                                : `bg-teal-950/60 border border-teal-800/70 text-teal-100`;
+
+                            return `
+                                <div class="${boxStyle} p-3 rounded-xl text-xs leading-relaxed">
+                                    <strong class="text-${sec.accent}-300 block mb-1">${b.label}</strong>
+                                    ${content}
+                                </div>
+                            `;
+                        }).join('');
+
+                        return `
+                            <div class="glass-card-dark motion-card rounded-2xl p-5 border-t-4 border-${sec.accent}-400 flex flex-col gap-2.5">
+                                <h4 class="text-base md:text-lg font-black text-white border-b border-teal-800/80 pb-2.5">${comp.name}</h4>
+                                ${blocksHtml}
+                            </div>
+                        `;
+                    }).join('');
+
+                    secDiv.innerHTML = `
+                        <div class="mb-5 border-b border-teal-800/70 pb-4">
+                            <h3 class="text-lg md:text-xl font-black text-${sec.accent}-300 mb-1.5">${sec.title}</h3>
+                            <p class="text-xs md:text-sm text-teal-100 leading-relaxed">${sec.desc}</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            ${cardsHtml}
+                        </div>
+                    `;
+
+                    sectionsContainer.appendChild(secDiv);
+                });
+            }
+
+            // 3. جدول المقارنة السعرية (ثالثاً)
+            const pricingRows = [
+                ["منصة الأعمال", "من 150 إلى 300 ريال لخدمات محددة", "لكل معاملة"],
+                ["شامل", "غير معلن", "حسب الخدمة"],
+                ["سند", "غير معلن", "اتفاق العميل مع مقدم الخدمة"],
+                ["خدماتي", "غير معلن", "حسب الخدمة"],
+                ["المعقب الإلكتروني", "من 99 إلى 1,000 ريال", "لكل معاملة"],
+                ["تعقيب", "غير معلن", "حسب الخدمة"],
+                ["مكتب المعقب", "غير معلن", "حسب الخدمة"],
+                ["الإنجاز السريع", "غير معلن", "حسب الخدمة"],
+                ["تنفيذ", "2,250 – 5,000 ريال", "كل 3 أشهر"],
+                ["تعامد", "6,000 – 18,000 ريال", "سنوي"],
+                ["Easy HR", "1,000 – 3,500 ريال", "شهري"],
+                ["Motaded", "1,750 – 3,150 ريال", "لكل موظف شهرياً"],
+                ["The Right Way", "3,500 – 7,500 ريال", "شهري"],
+                ["Noble Core", "2,500 ريال", "شهري"],
+                ["Riz & Mona", "يبدأ من 3,000 ريال", "شهري"],
+                ["إحاطة", "غير معلن", "عرض سعر"],
+                ["BOCO", "غير معلن", "عرض سعر"],
+                ["AstroLabs", "غير معلن", "عرض سعر"],
+                ["Business Setup Company", "غير معلن", "عرض سعر"]
+            ];
+
+            const pricingTableBody = document.getElementById('pricing-table-body');
+            if (pricingTableBody) {
+                pricingRows.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.className = 'hover:bg-teal-900/40 transition-colors';
+                    tr.innerHTML = `
+                        <td class="p-3.5 font-bold text-white">${row[0]}</td>
+                        <td class="p-3.5 font-bold text-amber-300">${row[1]}</td>
+                        <td class="p-3.5 text-cyan-200">${row[2]}</td>
+                    `;
+                    pricingTableBody.appendChild(tr);
+                });
+            }
+
+            // 4. تحليل المنافسة حسب خدمات ركاز (رابعاً)
+            const serviceCompetitionData = [
+                {
+                    title: "1. خدمات الموارد البشرية",
+                    accent: "teal",
+                    intro: "تشهد خدمات الموارد البشرية منافسة واضحة من شركات مثل:",
+                    list: ["The Right Way.", "Motaded.", "Easy HR.", "تعامد.", "تنفيذ.", "Noble Core."],
+                    body: "وتتمثل أبرز الخدمات المشتركة في إدارة قوى ومدد ومقيم والتأمينات الاجتماعية، ومتابعة الموظفين والرواتب والتوطين والامتثال.",
+                    opp: "تقديم خدمة أكثر شمولاً تجمع بين إدارة المنصات الحكومية ومتابعة الموظفين وإعداد التقارير والتنبيهات الدورية، بدلاً من الاكتفاء بتنفيذ الطلبات عند الحاجة."
+                },
+                {
+                    title: "2. العلاقات الحكومية والتراخيص التجارية",
+                    accent: "cyan",
+                    intro: "المنافسون الأبرز:",
+                    list: ["منصة الأعمال.", "شامل.", "خدماتي.", "سند.", "تنفيذ.", "تعامد.", "Arab Vision في المقارنة السابقة."],
+                    body: "وتشمل المنافسة خدمات بلدي، وتراخيص الأنشطة التجارية، وتجديد السجلات، وخدمات المركز السعودي للأعمال، وسلامة والدفاع المدني، والغرف التجارية ووزارة الخارجية.",
+                    opp: "توفير باقة موحدة لإدارة التراخيص التجارية، مع نظام تنبيهات لانتهاء الرخص والسجلات ومتابعة المعاملات حتى اكتمالها."
+                },
+                {
+                    title: "3. خدمات هدف ووزارة الموارد البشرية",
+                    accent: "emerald",
+                    intro: null,
+                    list: null,
+                    body: "تشمل هذه المجموعة خدمات استقطاب الكفاءات، ودعم التوظيف، والتوطين، وبرامج التدريب، وإدارة ملفات المنشآت والصلاحيات والفروع.\nوتتداخل هذه الخدمات مع عروض شركات الموارد البشرية والتعهيد، خصوصاً The Right Way وMotaded وEasy HR.",
+                    opp: "تطوير خدمات مساندة للمنشآت في التوظيف والتوطين ومتابعة الالتزامات، مع تقديم تقارير دورية توضح وضع المنشأة ومتطلبات تحسين الامتثال."
+                },
+                {
+                    title: "4. خدمات الغرف التجارية ووزارة الخارجية",
+                    accent: "amber",
+                    intro: null,
+                    list: null,
+                    body: "تتضمن هذه المجموعة تصديق العقود والخطابات والفواتير والمستندات التجارية، وإصدار شهادات المنشأ، وطلبات التأشيرات والتفويضات وتصديق الوثائق.\nتتقاطع هذه الخدمات مع شركات التعقيب والعلاقات الحكومية ومزودي خدمات تأسيس الأعمال.",
+                    opp: "استهداف الشركات التجارية والمصانع وشركات الاستيراد والتصدير من خلال تقديم خدمات متكاملة لتجهيز المستندات والتصديقات والتأشيرات والمتابعة."
+                },
+                {
+                    title: "5. الخدمات الصناعية والتجارية",
+                    accent: "cyan",
+                    intro: "تعد هذه المجموعة من أهم فرص التخصص أمام ركاز، وتشمل:",
+                    list: ["منصة فسح.", "منصة سابر.", "منصة صناعي.", "التقييم الذاتي.", "مواءمة.", "شهادات المنشأ.", "الإعفاءات الجمركية.", "التراخيص الصناعية."],
+                    subLabel: "المنافسة الحالية:",
+                    body: "تشير الدراسة إلى أن شركة تنفيذ تعد من أقرب الشركات من حيث اتساع تغطية الخدمات الحكومية، إلا أن ملف المنافسين لم يرصد شركة متخصصة تقدم أسعاراً معلنة تغطي بصورة واضحة جميع خدمات فسح وسابر وصناعي.",
+                    opp: "التخصص في خدمات المنشآت الصناعية والمستوردين والمصدرين، وتقديم حلول متكاملة تجمع بين التراخيص الصناعية والمطابقة والفسح الجمركي ومتابعة الشحنات والمستندات."
+                },
+                {
+                    title: "6. خدمات تم وأمن والتأمين الطبي",
+                    accent: "teal",
+                    intro: null,
+                    list: null,
+                    subLabel: "المنافسة الحالية:",
+                    body: "تتضمن هذه المجموعة خدمات المركبات والتفويضات والاستمارات ونقل الملكية والمخالفات والتأمين، بالإضافة إلى شهادات خلو السوابق وتصاريح أمن الطرق والتصاريح الأمنية والتأمين الطبي.\nتوجد خدمات متفرقة ضمن باقات بعض الشركات، لكن ملف الدراسة لا يثبت وجود منافس متخصص يغطي جميع هذه الخدمات ضمن باقة واحدة معلنة.",
+                    opp: "تقديم هذه الخدمات كجزء من باقة المنشآت المتكاملة، أو كخدمات إضافية يتم تسعيرها بصورة مستقلة."
+                }
+            ];
+
+            const srvCompGrid = document.getElementById('service-competition-grid');
+            if (srvCompGrid) {
+                serviceCompetitionData.forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = `glass-card-dark motion-card p-5 rounded-2xl border-t-4 border-${item.accent}-400 flex flex-col justify-between gap-3`;
+                    card.innerHTML = `
+                        <div class="space-y-2.5 text-xs md:text-sm text-teal-100 leading-relaxed">
+                            <h3 class="font-black text-white text-base">${item.title}</h3>
+                            ${item.intro ? `<p class="font-semibold text-${item.accent}-200">${item.intro}</p>` : ''}
+                            ${item.list ? `<ul class="list-disc list-inside space-y-1 text-xs">${item.list.map(i => `<li>${i}</li>`).join('')}</ul>` : ''}
+                            ${item.subLabel ? `<strong class="text-amber-300 block pt-1">${item.subLabel}</strong>` : ''}
+                            ${item.body.split('\n').map(p => `<p>${p}</p>`).join('')}
+                        </div>
+                        <div class="bg-${item.accent}-500/15 border border-${item.accent}-400/35 p-3.5 rounded-xl text-xs text-teal-50 leading-relaxed">
+                            <strong class="text-${item.accent}-300 block mb-1">الفرصة المتاحة لركاز:</strong>
+                            <p>${item.opp}</p>
+                        </div>
+                    `;
+                    srvCompGrid.appendChild(card);
+                });
+            }
+
+            // تفعيل أزرار الطي والفتح
+            document.querySelectorAll('.accordion-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-target');
+                    const targetEl = document.getElementById(targetId);
+                    const iconEl = document.getElementById(`icon-${targetId}`);
+                    if (targetEl && iconEl) {
+                        const isHidden = targetEl.classList.contains('hidden');
+                        if (isHidden) {
+                            targetEl.classList.remove('hidden');
+                            iconEl.textContent = '−';
+                        } else {
+                            targetEl.classList.add('hidden');
+                            iconEl.textContent = '+';
+                        }
+                    }
+                });
+            });
+
+            // تفعيل تأثيرات الموشن الانسيابية عند التمرير (Intersection Observer)
+            const revealElements = document.querySelectorAll('.motion-reveal');
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, idx) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, idx * 80);
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.06 });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+        } catch (error) {
+            console.error('حدث خطأ أثناء تهيئة العرض:', error);
+        }
+    </script>
+</body>
+</html>
